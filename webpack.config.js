@@ -19,7 +19,7 @@ module.exports = {
             limit: 2048,  //如果图片的大小超过2048，就像file-loader一样，将打包的图片放到dist下 
           }
         }
-      }
+      },
       //file-loader  使用file-loader打包图片，会在dist文件下生成对应的图片 
       /* {
         test: /\.(jpg|png|gif)$/, //jpg格式的文件  (jpg|png|gif)可以打包多种格式的图片文件
@@ -32,6 +32,14 @@ module.exports = {
           }
         }
       } */
+      { 
+        test: /\.css$/, //打包css文件
+        use: ['style-loader',  //loader的执行顺序：从下到上，从右到左 
+              'css-loader',
+              'sass-loader',  //打包sass文件
+              'postcss-loader'  //厂商前缀
+        ]
+      }
     ]
   },
   output: {
