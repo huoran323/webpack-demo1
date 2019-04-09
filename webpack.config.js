@@ -1,4 +1,8 @@
 const path = require("path"); //引入一个名字叫path的node的核心模块
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+// plugin 可以再webpack运行到某个时刻的时候， 帮你做一些事情
 
 module.exports = {
   mode: "development", //模式 development:bundle.js不会被压缩  production: bundle.js会被压缩
@@ -55,6 +59,12 @@ module.exports = {
       } 
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({   //html-webpack-plugin插件会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
+      template: 'src/index.html',  //模板文件，
+    }),
+    new CleanWebpackPlugin(['dist']), //
+  ], 
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist") //__dirname指的是当前文件所在的路径  生成bundle文件夹的绝对路径
