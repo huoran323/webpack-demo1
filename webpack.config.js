@@ -35,9 +35,16 @@ module.exports = {
       { 
         test: /\.css$/, //打包css文件
         use: ['style-loader',  //loader的执行顺序：从下到上，从右到左 
-              'css-loader',
-              'sass-loader',  //打包sass文件
-              'postcss-loader'  //厂商前缀
+              // 'css-loader',
+              {  //给css-loader添加配置项
+                loader: 'css-loader',
+                options: {
+                  //importLoaders: 2, //对于在css/scss/less文件中引用css/scss/less文件，importLoaders: 2 规定内部的css/scss/less文件也要重新走一遍下面两个loader 
+                  modules: true, //开启css的模块化打包，
+                }
+              },
+              // 'sass-loader',  //打包sass文件
+              // 'postcss-loader'  //厂商前缀
         ]
       }
     ]

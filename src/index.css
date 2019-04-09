@@ -1,1 +1,6 @@
- @import './avatar.css' 
+ /* @import './avatar.css'  */
+
+ .avatar {
+     height: 150px;
+     width: 150px;
+ }
