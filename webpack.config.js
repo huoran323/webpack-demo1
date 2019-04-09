@@ -63,7 +63,7 @@ module.exports = {
     new HtmlWebpackPlugin({   //html-webpack-plugin插件会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
       template: 'src/index.html',  //模板文件，
     }),
-    new CleanWebpackPlugin(['dist']), //
+    new CleanWebpackPlugin(), // 清除插件
   ], 
   output: {
     filename: "bundle.js",
