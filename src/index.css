@@ -1,5 +1,35 @@
  /* @import './avatar.css'  */
 
+@font-face {
+    font-family: "iconfont";
+    src: url('./fonts/iconfont.eot?t=1554788862649');
+    /* IE9 */
+    src: url('./fonts/iconfont.eot?t=1554788862649#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANcAAsAAAAAB9QAAAMOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqDMIMAATYCJAMMCwgABCAFhG0HTBvUBsiOwnGvxM1Q/n/FAzTX25tMFpoUAS2gQkXg6j7IIoBDdld/pM7ebq1lHlC9kBn/LAlaViwPswecTcmxcDW+SlVIEqZC9X8ux7foRFYfKMc5Fh71AowDSqOxJkVWIAl6y+HwyBzPOE5Apr2u0tT90wtoStnjAsLqwLOgWTBIO8qDsqDYsDQVdigoJxuTd9gefT/8aXAokyhE9kkzl+65sPpz+587Yk2lxoJYo2Y8G8RVRPQFUsL8RsdMlSTRV0WmJ6q6gnX1C/y5o1Lhz+2BYLV/eAQJocgurQt6YnlyRkJP4dSEeJkERFB0C6lDOE00TVmnxbaD63bsuK5Ue3nzRXKfqrmQZahNl0LIgrWX82W522ovZQ03XZDWXMzzs09bud6/dy81Tee+32u+Dzb43pf2heNfRzS6+7ndhionL4ynW6+3rcHmywXbpaw+tXh8ZRIZ51cMXR4okQax9MinofUHEs3c7R8/TtRv1LZR/RMhebxD6nf9RvV599acGJItNI7c38OlVg0fLJ3xP/fjkYZVjzXzysrzHkWOf49PpBEEtg5/n1BlSzzVi0h1okMJOFC9BBR0HU9QI0tUL4jyRFNvSwAqL+PvOAKnXsQbceJP+40z0+7/Wtxg7H/lPAW/vsz+H/sqL1IwFyjfljPwi4TAhtQQ28aYagJPYLmi6bccT5AZbhW2p7FvdlUzcIygXBCKkChpB1FZVyQl+kJBbigUlU2ATB8Hq3NNsIqQ1kFvbwiChj4gUd9ziBr6RFLiCwqa+4OihiFCZn5osmWue1jRnsJkCbloP2DgZKlyzdKOy8/Iu4ktzosj6opYB2Ec9R9YTh9QSjzGDH3rjUUUKs4S3EenURxnmHMWkiN9XySfDAYsbXpT38kSaJuCEYsgLmR7gAKOTEoFrUW78vkzxHMjZuEOTp3/CmFa0Dka6RsCkANFCuJcyyvaLc+YEApSWCaB9pGNxE4ig/LmQSHiEH0+Qyw3MSDNFFTRn1+VPN82yNj1MSQhhlSDUx9rWK6bkNaWR50iwnlxoAUAAAA=') format('woff2'),
+        url('./fonts/iconfont.woff?t=1554788862649') format('woff'),
+        url('./fonts/iconfont.ttf?t=1554788862649') format('truetype'),
+        /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+        url('./fonts/iconfont.svg?t=1554788862649#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    /* font-size: 16px; */
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_addmessage:before {
+    content: "\eb8f";
+}
+
+.icon-icon_addresslist:before {
+    content: "\eb90";
+}
+
  .avatar {
      height: 150px;
      width: 150px;

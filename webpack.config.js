@@ -39,14 +39,20 @@ module.exports = {
               {  //给css-loader添加配置项
                 loader: 'css-loader',
                 options: {
-                  //importLoaders: 2, //对于在css/scss/less文件中引用css/scss/less文件，importLoaders: 2 规定内部的css/scss/less文件也要重新走一遍下面两个loader 
-                  modules: true, //开启css的模块化打包，
+                  // importLoaders: 1, //对于在css/scss/less文件中引用css/scss/less文件，importLoaders: 2 规定内部的css/scss/less文件也要重新走一遍下面两个loader 
+                  // modules: false, //开启css的模块化打包，
                 }
               },
               // 'sass-loader',  //打包sass文件
               // 'postcss-loader'  //厂商前缀
         ]
-      }
+      },
+      {
+        test: /\.(eot|ttf|svg|woff)$/, //打包字体
+        use: [
+          "file-loader" // 
+        ]
+      } 
     ]
   },
   output: {
