@@ -117,6 +117,10 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),  //开启webpack的html功能，配合devServer的hot和hotOnly开启
   ],
 
+  optimization: { //在开发环境中使用tree-shaking需要引入这个，tree-shaking只适用静态引入(import('xxx')), 不适用commonjs动态引入(const xxx = require('xxx)),还需要在package.json中添加"sideEffects": false,意思就是tree-shaking对所有的模块都使用;  "sideEffects": ["*.css"],意思是指遇到css文件不需要使用tree-shaking
+    usedExports: true, //
+  },
+
   output: {
     // publicPath: "http://cdn.com.cn", //打包上线的外网地址
     filename: "[name].js", //对应入口的两个打包的文件名main sub

@@ -38,15 +38,20 @@ btn.onclick = function() {
 // })
 
 //-----------------webpack打包react项目------------------------------------
-import '@babel/polyfill'
+// import '@babel/polyfill'
 
-import React, { Component } from 'react'
-import ReactDom from 'react-dom'
+// import React, { Component } from 'react'
+// import ReactDom from 'react-dom'
 
-class App extends Component {
-    render() {
-        return <div>hello world</div>
-    }
-}
+// class App extends Component {
+//     render() {
+//         return <div>hello world</div>
+//     }
+// }
 
-ReactDom .render(<App />, document.getElementById('root')) 
+// ReactDom .render(<App />, document.getElementById('root')) 
+
+//-----------------------------------------------------------------------
+import { add } from './math'
+
+ add(1, 2)

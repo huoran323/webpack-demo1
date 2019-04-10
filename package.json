@@ -1,6 +1,9 @@
 {
   "name": "webpack-demo1",
   "version": "1.0.0",
+  "sideEffects": [
+    "*.css"
+  ],
   "description": "",
   "private": true,
   "scripts": {
