@@ -24,7 +24,7 @@ module.exports = {
     open: true,  //自动帮你打开浏览器，并访问地址 
     port: 8080, //端口号
     hot: true, //开启热更新  
-    hotOnly: true, //开启：热模块更新失效的时候不需要浏览器做其他重新启动的工作
+    // hotOnly: true, //开启：热模块更新失效的时候不需要浏览器做其他重新启动的工作
   },
 
   module: {
@@ -117,6 +117,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),  //开启webpack的html功能，配合devServer的hot和hotOnly开启
   ],
 
+  //tree-shaking引入模块时，不引入模块的所有代码，只引入模块所需要的代码
   optimization: { //在开发环境中使用tree-shaking需要引入这个，tree-shaking只适用静态引入(import('xxx')), 不适用commonjs动态引入(const xxx = require('xxx)),还需要在package.json中添加"sideEffects": false,意思就是tree-shaking对所有的模块都使用;  "sideEffects": ["*.css"],意思是指遇到css文件不需要使用tree-shaking
     usedExports: true, //
   },
