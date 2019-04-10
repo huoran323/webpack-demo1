@@ -25,4 +25,14 @@ btn.onclick = function() {
     document.body.append(div)
 } */
 
-//---------------------------------------
+//----------------Babel处理ES6语法-----------------------
+import '@babel/polyfill' //将一些ES6的函数等语法，转换成ES5能识别的语法，例如map
+
+const arr = [
+    new Promise(() => {}),
+    new Promise(() => {})
+]
+
+arr.map(item => {
+    console.log(item)
+})

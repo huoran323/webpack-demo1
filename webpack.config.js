@@ -30,6 +30,17 @@ module.exports = {
   module: {
     //模块配置
     rules: [
+
+      {
+        test: /\.js$/,
+        exclude: /node_modules/, //如果你的js文件是放在node_modules中的，就不使用babel-loader
+        loader: "babel-loader",  //es6转es5 
+        options: {
+          presets: [["@babel/preset-env", {
+            useBuiltIns: "usage",  //当做babel/polify填充时，往低版本浏览器加一些不存在的特性时，根据业务代码选择加入（如用到map了，就去添加，没用到就不添加）
+          }]], //通过这个 使ES6转换成ES5
+        }
+      },
       //url-loader  使用url-loader打包图片，会将图片转换成一个base64的字符串，然后直接放到bundle.js里面，而不是单独生成一个图片，适用于图片较小的情况
       {
         test: /\.(jpg|png|gif)$/, //jpg格式的文件  (jpg|png|gif)可以打包多种格式的图片文件
