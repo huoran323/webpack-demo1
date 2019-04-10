@@ -1,6 +1,7 @@
 const path = require("path"); //引入一个名字叫path的node的核心模块
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
 // plugin 可以再webpack运行到某个时刻的时候， 帮你做一些事情
 
@@ -18,9 +19,12 @@ module.exports = {
     // sub: "./src/index.js" //打包两个文件
   },
 
-  devServer: {  //自动打包并重新刷新浏览器
+  devServer: {  //自动打包并重新刷新浏览器  webpack-dev-server打包不会生成dist文件，存储电脑的内存中了
     contentBase: './dist',  //打包的文件目录
     open: true,  //自动帮你打开浏览器，并访问地址 
+    port: 8080, //端口号
+    hot: true, //开启热更新  
+    hotOnly: true, //开启：热模块更新失效的时候不需要浏览器做其他重新启动的工作
   },
 
   module: {
@@ -83,7 +87,8 @@ module.exports = {
       //html-webpack-plugin插件会在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中
       template: "src/index.html" //模板文件，
     }),
-    new CleanWebpackPlugin() // 清除插件
+    new CleanWebpackPlugin(), // 清除插件
+    new webpack.HotModuleReplacementPlugin(),  //开启webpack的html功能，配合devServer的hot和hotOnly开启
   ],
 
   output: {
