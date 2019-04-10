@@ -26,13 +26,27 @@ btn.onclick = function() {
 } */
 
 //----------------Babel处理ES6语法-----------------------
-import '@babel/polyfill' //将一些ES6的函数等语法，转换成ES5能识别的语法，例如map  使用插件的话  不需要引入
+// import '@babel/polyfill' //将一些ES6的函数等语法，转换成ES5能识别的语法，例如map  使用插件的话  不需要引入
 
-const arr = [
-    new Promise(() => {}),
-    new Promise(() => {})
-]
+// const arr = [
+//     new Promise(() => {}),
+//     new Promise(() => {})
+// ]
 
-arr.map(item => {
-    console.log(item)
-})
+// arr.map(item => {
+//     console.log(item)
+// })
+
+//-----------------webpack打包react项目------------------------------------
+import '@babel/polyfill'
+
+import React, { Component } from 'react'
+import ReactDom from 'react-dom'
+
+class App extends Component {
+    render() {
+        return <div>hello world</div>
+    }
+}
+
+ReactDom .render(<App />, document.getElementById('root')) 
