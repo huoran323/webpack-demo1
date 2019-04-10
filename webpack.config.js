@@ -36,9 +36,24 @@ module.exports = {
         exclude: /node_modules/, //如果你的js文件是放在node_modules中的，就不使用babel-loader
         loader: "babel-loader",  //es6转es5 
         options: {
-          presets: [["@babel/preset-env", {
+
+          /********************下面两个二选一****************/
+          //如果使用的只是业务代码的话  用下面这个
+          /*presets: [["@babel/preset-env", {
+             targets: { 
+              chrome: "67", //打包的项目会运行在大于67版本的chrome浏览器下 
+            },
             useBuiltIns: "usage",  //当做babel/polify填充时，往低版本浏览器加一些不存在的特性时，根据业务代码选择加入（如用到map了，就去添加，没用到就不添加）
-          }]], //通过这个 使ES6转换成ES5
+          }]], //通过这个 使ES6转换成ES5 */
+
+          //使用类库的时候，使用下面这个插件 需要安装@babel/plugin-transform-runtime， @babel/runtime， @babel/runtime-corejs2
+          "plugins": [["@babel/plugin-transform-runtime", {
+            "corejs": 2,
+            "heplers": true,
+            "regenerator": true,
+            "useESModules": false
+          }]],
+          /***************************************** */
         }
       },
       //url-loader  使用url-loader打包图片，会将图片转换成一个base64的字符串，然后直接放到bundle.js里面，而不是单独生成一个图片，适用于图片较小的情况

@@ -26,7 +26,7 @@ btn.onclick = function() {
 } */
 
 //----------------Babel处理ES6语法-----------------------
-import '@babel/polyfill' //将一些ES6的函数等语法，转换成ES5能识别的语法，例如map
+import '@babel/polyfill' //将一些ES6的函数等语法，转换成ES5能识别的语法，例如map  使用插件的话  不需要引入
 
 const arr = [
     new Promise(() => {}),
