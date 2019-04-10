@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   mode: "development", //模式 development:bundle.js不会被压缩  production: bundle.js会被压缩
   // entry: "./src/index.js", //从index.js开始打包
-
+ 
   devtool: 'cheap-module-eval-source-map',  //sourceMap是一个映射关系，他可以知道打包文件中的js对应src下面的哪个js,可以映射到代码所在的src文件的位置,可以映射到源代码哪行出错了
   /* devtool:
     若环境是开发环境mode: "development"  devtool: 'cheap-module-eval-source-map'
@@ -16,6 +16,11 @@ module.exports = {
   entry: {
     main: "./src/index.js",
     // sub: "./src/index.js" //打包两个文件
+  },
+
+  devServer: {  //自动打包并重新刷新浏览器
+    contentBase: './dist',  //打包的文件目录
+    open: true,  //自动帮你打开浏览器，并访问地址 
   },
 
   module: {

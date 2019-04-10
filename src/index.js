@@ -8,6 +8,6 @@ import './index.css'  //全局的引用
 // img.classList.add(style.avatar)
 
 var root = document.getElementById('root');
-root.innerHTML = '<div class="iconfont icon-icon_addmessage"></div>'
+root.innerHTML = '<div class="iconfont icon-icon_addmessage">fafa</div>'
 // root.append(img);
 
